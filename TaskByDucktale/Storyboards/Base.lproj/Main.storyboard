@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ProductListViewController" customModule="TaskByDucktale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gel-Le-YT4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="iuC-UP-Sva" userLabel="Product Cell" customClass="ProductListCell" customModule="TaskByDucktale" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iuC-UP-Sva" id="4ea-mY-E6S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hB0-3w-aLE">
+                                                    <rect key="frame" x="284" y="14" width="110" height="42"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Be-ST-bFb" userLabel="Decrease">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <state key="normal" title="-">
+                                                                <color key="titleColor" systemColor="systemPinkColor"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="decreaseButtonTapped:" destination="iuC-UP-Sva" eventType="touchUpInside" id="FwP-af-Mmq"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-Xu-xt5" userLabel="Quantity">
+                                                            <rect key="frame" x="40" y="0.0" width="30" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53i-5J-0hu" userLabel="Increase">
+                                                            <rect key="frame" x="80" y="0.0" width="30" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <state key="normal" title="+">
+                                                                <color key="titleColor" systemColor="systemGreenColor"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="increaseButtonTapped:" destination="iuC-UP-Sva" eventType="touchUpInside" id="ecm-7R-4IN"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hB0-3w-aLE" secondAttribute="bottom" constant="14" id="1qR-m0-HhN"/>
+                                                <constraint firstItem="hB0-3w-aLE" firstAttribute="top" secondItem="4ea-mY-E6S" secondAttribute="top" constant="14" id="WaN-VU-eCd"/>
+                                                <constraint firstAttribute="trailing" secondItem="hB0-3w-aLE" secondAttribute="trailing" constant="20" id="cFA-xL-zOw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quantity" destination="i7a-Xu-xt5" id="xzc-Za-zq1"/>
+                                            <outlet property="stackView" destination="hB0-3w-aLE" id="3f5-Lw-DOc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hja-2j-EqF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Dy4-H6-zNe"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agu-pj-hW3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Product List" id="ZqD-aE-Kqr">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fwA-Y5-TE7">
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
+                                            <connections>
+                                                <action selector="addProductButtonTapped:" destination="BYZ-38-t0r" id="G9g-FL-Rak"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gel-Le-YT4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0W5-dS-bhQ"/>
+                            <constraint firstItem="gel-Le-YT4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1zm-rA-lVr"/>
+                            <constraint firstItem="agu-pj-hW3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7aS-qf-876"/>
+                            <constraint firstItem="gel-Le-YT4" firstAttribute="top" secondItem="agu-pj-hW3" secondAttribute="bottom" id="niX-eH-J0f"/>
+                            <constraint firstItem="gel-Le-YT4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="umJ-yn-MDh"/>
+                            <constraint firstItem="agu-pj-hW3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wkD-af-mdA"/>
+                            <constraint firstItem="agu-pj-hW3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yqh-CD-sYf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gel-Le-YT4" id="woG-vE-gFs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="138.58695652173915"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
